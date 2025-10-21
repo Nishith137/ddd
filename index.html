@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Engagement Invitation</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #58000F;
+  font-family: 'Times New Roman', Times, serif;
+  overflow: hidden;
+}
+
+/* Invitation Card */
+.invitation-card {
+  position: relative;
+  width: 90vw;
+  max-width: 400px;
+  aspect-ratio: 9/14;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0,0,0,0.7);
+  border: 5px solid #D4AF37;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.25);
+  animation: cardPulse 3s ease-in-out infinite alternate;
+}
+
+/* Card pulse animation */
+@keyframes cardPulse {
+  0% { transform: scale(1); box-shadow: 0 0 30px rgba(212,175,55,0.5);}
+  50% { transform: scale(1.02); box-shadow: 0 0 50px rgba(212,175,55,0.7);}
+  100% { transform: scale(1); box-shadow: 0 0 30px rgba(212,175,55,0.5);}
+}
+
+/* Background Image */
+.background-image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('https://img.freepik.com/free-photo/princess-prince-digital-art_23-2151610493.jpg?semt=ais_hybrid&w=740&q=80');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.35); /* Reduced for clearer text */
+  z-index: 0;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+/* Golden rays */
+.ray {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ray::before, .ray::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(255,215,0,0.15) 0%, transparent 70%);
+  transform: rotate(30deg);
+  animation: rotateRay 6s linear infinite;
+}
+
+.ray::after {
+  transform: rotate(-30deg);
+}
+
+@keyframes rotateRay {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+/* Text Styling */
+.invitation-card h1,
+.invitation-card h2,
+.invitation-card p {
+  position: relative;
+  z-index: 2;
+  color: #FFD700;
+  margin: 0.5rem 0;
+  text-shadow: 0 0 10px rgba(255,215,0,0.6);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Font Sizes */
+h1 { font-size: 2.5rem; line-height:1.1em; }
+h2 { font-size: 1.6rem; font-style: italic; }
+p { font-size: 1rem; }
+
+/* Text fade-in animation */
+@keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+.animate-fade-in-up { opacity: 0; animation:fadeInUp 1s ease-out forwards; }
+.delay-1 { animation-delay:0.3s; } 
+.delay-2 { animation-delay:0.6s; } 
+.delay-3 { animation-delay:0.9s; } 
+.delay-4 { animation-delay:1.2s; } 
+.delay-5 { animation-delay:1.5s; } 
+.delay-6 { animation-delay:1.8s; } 
+.delay-7 { animation-delay:2.1s; }
+
+/* Floating sparkles on card */
+.sparkle {
+  position: absolute;
+  width: 6px; height: 6px;
+  background: gold;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatUp 4s linear infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100%); opacity: 0.8;}
+  100% { transform: translateY(-10%); opacity:0;}
+}
+
+/* Floating golden dust */
+.dust {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: #FFD700;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: dustMove 5s linear infinite;
+}
+@keyframes dustMove {
+  0% { transform: translateY(100%) rotate(0deg); opacity:0.5;}
+  100% { transform: translateY(-10%) rotate(360deg); opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="invitation-card">
+  <!-- Background -->
+  <div class="background-image"></div>
+  <div class="overlay"></div>
+
+  <!-- Golden Rays -->
+  <div class="ray"></div>
+
+  <!-- Invitation Text -->
+  <h1 class="animate-fade-in-up delay-2">N & A</h1>
+  <p class="animate-fade-in-up delay-3">Joyfully invite you to celebrate their</p>
+
+  <!-- Space -->
+  <div style="height: 1rem;"></div>
+
+  <h2 class="animate-fade-in-up delay-4">Engagement Ceremony</h2>
+
+  <!-- Names in full caps -->
+  <h1 class="animate-fade-in-up delay-5" style="font-size:2rem;">NISHITH & AMI</h1>
+
+  <!-- Placeholder for rings image -->
+  <div class="animate-fade-in-up delay-5" style="margin: 0.8rem 0;">
+    <img src="https://cdn.freepixel.com/preview/free-photos-matching-wedding-bands-for-bride-and-groom-photo---a-beautiful-pair-of-intertwined-gold-wedding-ring-preview-1004226922.jpg" alt="Interlocked Rings" style="width:60px; height:auto;">
+  </div>
+
+  <!-- Date/Time with space -->
+  <div style="margin-bottom: 0.8rem;">
+    <p class="animate-fade-in-up delay-6">Sunday, 26 October 2025</p>
+    <p class="animate-fade-in-up delay-6">11:00 AM onwards</p>
+  </div>
+
+  <!-- Venue section with space -->
+  <div style="margin-bottom: 0.8rem;">
+    <p class="animate-fade-in-up delay-6">Near Chamunda Temple</p>
+    <p class="animate-fade-in-up delay-6">Village – Punsari, T.A. – Talod</p>
+  </div>
+
+  <p class="animate-fade-in-up delay-7" style="font-style:italic;">Together is a beautiful place to be</p>
+  <p class="animate-fade-in-up delay-7">With love, the Barot Family</p>
+</div>
+
+<script>
+// Floating sparkles on card
+function createSparkle(){
+  const s=document.createElement('div');
+  s.className='sparkle';
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  s.style.width=(4+Math.random()*6)+'px';
+  s.style.height=s.style.width;
+  s.style.animationDuration=(3+Math.random()*3)+'s';
+  document.querySelector('.invitation-card').appendChild(s);
+  setTimeout(()=>s.remove(),6000);
+}
+setInterval(createSparkle,200);
+
+// Floating dust on card
+function createDust(){
+  const d=document.createElement('div');
+  d.className='dust';
+  d.style.left=Math.random()*100+'%';
+  d.style.top=Math.random()*100+'%';
+  d.style.width=(2+Math.random()*3)+'px';
+  d.style.height=d.style.width;
+  d.style.animationDuration=(4+Math.random()*4)+'s';
+  document.querySelector('.invitation-card').appendChild(d);
+  setTimeout(()=>d.remove(),7000);
+}
+setInterval(createDust,250);
+</script>
+
+</body>
+</html>
